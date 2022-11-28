@@ -102,7 +102,6 @@ export default function TimeBlock() {
 
     useEffect(() => {
         onChange(localStorage.getItem("Time"))
-        dailyTask && setDailyTask(JSON.parse(localStorage.getItem("Task")))
     },[])
 
     function onTimeChange(id){
