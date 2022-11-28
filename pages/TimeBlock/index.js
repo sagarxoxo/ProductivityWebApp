@@ -6,10 +6,11 @@ import TimePicker from 'react-time-picker/dist/entry.nostyle';
 export default function TimeBlock() {
 
     const [value, onChange] = useState();
+    const [act, setAct] = useState(false);
     const [dailyTask, setDailyTask] = useState(
     [{
         id: 0,
-        taskName: "",
+        taskName: "Read Book",
         rewards: "",
         taskCompleted: false
     },
@@ -102,7 +103,6 @@ export default function TimeBlock() {
 
     useEffect(() => {
         onChange(localStorage.getItem("Time"))
-        act && setDailyTask(JSON.parse(localStorage.getItem("Task")))
     },[])
 
     function onTimeChange(id){
@@ -121,8 +121,15 @@ export default function TimeBlock() {
     }
     const saveTime = () => {
         localStorage.setItem('Time', value);
+        localStorage.setItem('Task', JSON.stringify(dailyTask));
     }
     
+    useEffect(() => {
+        localStorage.getItem("Task") && setDailyTask(JSON.parse(localStorage.getItem("Task")))
+    },[])
+    
+    console.log("f",dailyTask, act)
+
     function handleChange(e, id){
         const {type, checked, name, value} = e.target
         setDailyTask(dailyTask.map(data => {
@@ -131,9 +138,8 @@ export default function TimeBlock() {
             } else {
                 return data;
             }
-        })
+            })
         )
-        localStorage.setItem('Task', JSON.stringify(dailyTask));
     }
 
   return (
@@ -169,7 +175,7 @@ export default function TimeBlock() {
                                     <Form.Check 
                                     type="checkbox" 
                                     name="taskCompleted" 
-                                    value={taskData.taskCompleted} 
+                                    checked={taskData.taskCompleted} 
                                     onChange={(e) => handleChange(e, taskData.id)}
                                     />
                                 </Form.Group>
