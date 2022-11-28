@@ -102,7 +102,7 @@ export default function TimeBlock() {
 
     useEffect(() => {
         onChange(localStorage.getItem("Time"))
-        setDailyTask(JSON.parse(localStorage.getItem("Task")))
+        dailyTask && setDailyTask(JSON.parse(localStorage.getItem("Task")))
     },[])
 
     function onTimeChange(id){
@@ -158,7 +158,7 @@ export default function TimeBlock() {
                     </tr>
                 </thead>
                 <tbody>
-                {dailyTask?.map((taskData, index) => {
+                {dailyTask.map((taskData, index) => {
                     return (
                     <tr key={index}>
                         <td>{onTimeChange(taskData.id)}:00 </td>
