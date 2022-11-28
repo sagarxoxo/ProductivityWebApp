@@ -158,9 +158,9 @@ export default function TimeBlock() {
                     </tr>
                 </thead>
                 <tbody>
-                {dailyTask?.map(taskData => {
+                {dailyTask?.map((taskData, index) => {
                     return (
-                    <tr>
+                    <tr key={index}>
                         <td>{onTimeChange(taskData.id)}:00 </td>
                         <td>
                         <Form>
