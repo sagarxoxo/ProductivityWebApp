@@ -102,7 +102,9 @@ export default function TimeBlock() {
 
     useEffect(() => {
         onChange(localStorage.getItem("Time"))
-    },[])
+        localStorage.setItem('Task', JSON.stringify(dailyTask));
+        setDailyTask(JSON.parse(localStorage.getItem("Task")))
+    },[value,])
 
     function onTimeChange(id){
      const num = Number(value?.slice(0,2)) + id
