@@ -3,7 +3,7 @@ import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
 import styles from "../../styles/Timeblock.module.css"
 import TimePicker from 'react-time-picker/dist/entry.nostyle';
 
-export default function index() {
+export default function TimeBlock() {
 
     const [value, onChange] = useState();
     const [dailyTask, setDailyTask] = useState(
