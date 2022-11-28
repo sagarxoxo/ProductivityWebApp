@@ -6,6 +6,7 @@ import TimePicker from 'react-time-picker/dist/entry.nostyle';
 export default function TimeBlock() {
 
     const [value, onChange] = useState();
+    const [act, setAct] = useState(false);
     const [dailyTask, setDailyTask] = useState(
     [{
         id: 0,
@@ -102,9 +103,8 @@ export default function TimeBlock() {
 
     useEffect(() => {
         onChange(localStorage.getItem("Time"))
-        localStorage.setItem('Task', JSON.stringify(dailyTask));
-        setDailyTask(JSON.parse(localStorage.getItem("Task")))
-    },[value,])
+        act && setDailyTask(JSON.parse(localStorage.getItem("Task")))
+    },[])
 
     function onTimeChange(id){
      const num = Number(value?.slice(0,2)) + id
@@ -123,6 +123,7 @@ export default function TimeBlock() {
     const saveTime = () => {
         localStorage.setItem('Time', value);
         localStorage.setItem('Task', JSON.stringify(dailyTask));
+        setAct(prevState => !prevState)
     }
 
     function handleChange(e, id){
