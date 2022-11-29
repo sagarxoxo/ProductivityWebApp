@@ -7,7 +7,6 @@
 }
 
 .card .header{
-    border-bottom: 1px solid #11133E;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -31,4 +30,39 @@
 
 .react-time-picker__inputGroup{
     padding: 100px !important;
+}
+
+.timeBlock .formDesign{
+    border: 0px;
+    padding: 0px;
+    outline: none;
+}
+
+.timeBlock .formDesign:focus{
+    border: 0px;
+    padding: 0px;
+    outline: none;
+}
+
+.timeBlock .formDesignCheckbox{
+    margin-top: 5px;
+}
+.tr{
+    padding: 10px 0px;
+    border: 1px solid #9B9FA5;
+    vertical-align: middle;
+}
+
+.timeBlock  .tablesideHeader{
+    width: 80px;
+    background-color: #9B9FA520;
+}
+
+.stTable{
+    margin-top: 20px;
+}
+
+.stTable thead tr{
+    background-color: #9B9FA520;
+    border: 1px solid #9B9FA5;
 }
