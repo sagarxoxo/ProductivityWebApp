@@ -7,6 +7,15 @@ import DailyTaskTimeBlock from '../../components/DailyTaskTimeBlock';
 
 export default function TimeBlock() {
 
+  const [weekTask, setWeekTask] = useState();
+  const [weekTask1, setWeekTask1] = useState();
+
+  useEffect(() => {
+    localStorage.getItem("Week Project Task") && setWeekTask(localStorage.getItem("Week Project Task"))
+    localStorage.getItem("Week Learning Task") && setWeekTask1(localStorage.getItem("Week Learning Task"))
+  },[])
+
+
   return (
     <div className={styles.timeBlock}>
     <Container>
@@ -15,7 +24,8 @@ export default function TimeBlock() {
             <DailyTaskTimeBlock />
         </Col>
         <Col lg={6}>
-            <TaskCard />
+            <TaskCard title={"Week Project Task"} weekTask={weekTask} setWeekTask={setWeekTask} />
+            <TaskCard title={"Week Learning Task"} weekTask1={weekTask1} setWeekTask1={setWeekTask1}/>
         </Col>
     </Row>
     </Container>

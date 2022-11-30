@@ -44,9 +44,6 @@
     outline: none;
 }
 
-.timeBlock .formDesignCheckbox{
-    margin-top: 5px;
-}
 .tr{
     padding: 10px 0px;
     border: 1px solid #9B9FA5;
@@ -65,4 +62,8 @@
 .stTable thead tr{
     background-color: #9B9FA520;
     border: 1px solid #9B9FA5;
+}
+
+.taskInt{
+    margin-top: 20px;
 }
