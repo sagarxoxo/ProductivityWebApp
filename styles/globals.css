@@ -3,6 +3,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif !important; 
+  font-size: 1rem;
+  background-color: #FBFDFE !important; 
 }
 
 a {
@@ -20,6 +22,34 @@ a {
   --secondaryColor: #E0E7FE;
   --textColo: #11133E;
   --secondaryTextColor: #9B9FA5;
+}
+
+.navb{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+h1{
+  font-size: 3.5rem;
+}
+
+h2{
+  font-size: 2.5rem;
+}
+
+h3{
+  font-size: 2rem;
+}
+
+h4{
+  font-size: 1.75rem;
+}
+
+h5{
+  font-size: 1.5rem;
+}
+
+h6{
+  font-size: 1.25rem;
 }
 
 @media (prefers-color-scheme: dark) {

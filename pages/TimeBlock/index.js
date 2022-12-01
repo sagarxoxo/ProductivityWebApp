@@ -3,7 +3,7 @@ import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
 import styles from "../../styles/Timeblock.module.css"
 import TimePicker from 'react-time-picker/dist/entry.nostyle';
 import TaskCard from '../../components/TimeBlockComponents/TaskCard';
-import DailyTaskTimeBlock from '../../components/DailyTaskTimeBlock';
+import DailyTaskTimeBlock from '../../components/TimeBlockComponents/DailyTaskTimeBlock';
 
 export default function TimeBlock() {
 

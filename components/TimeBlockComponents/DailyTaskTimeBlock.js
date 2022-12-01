@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
-import styles from "../styles/Timeblock.module.css"
+import styles from "../../styles/Timeblock.module.css"
 import TimePicker from 'react-time-picker/dist/entry.nostyle';
 
 function DailyTaskTimeBlock() {

@@ -1,0 +1,776 @@
+/*Date Siebar*/
+.calendarContainer{
+}
+.NotiSec{
+    padding:  0px;
+    background-color: #fff;
+    padding: 0px 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px 0 rgb(0 0 0 / 5%), 0 0 0 1px rgb(0 0 0 / 8%);
+  }
+
+  .NotiSec:last-child{
+    margin-top: 16px;
+  }
+
+  
+  .NotiSec .NotiContainer h2{
+    padding-top: 18px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #363C48;
+  }
+  
+  .NotiCard{
+    margin: 8px 8px 0px 0px;
+    padding: 12px 10px;
+    background: #FCFCFC;
+    border: 1px solid #E9F0FC;
+    border-radius: 4px;
+  }
+  
+  .done{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #29CC39;
+    margin-right: 10px;
+  }
+
+  .fc .fc-button .fc-icon{
+    font-size: 14px !important;
+  }
+  
+  .pending{
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background: linear-gradient(145.49deg, #696BE0 15.12%, rgba(88, 90, 208, 0.94) 84.94%);
+    margin-right: 10px;
+  }
+  
+  .NotiCard span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .notihEAD{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #363C48;
+  }
+  
+  .notiDate{
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #6F7883;
+  }
+  
+
+  .slider{
+    scroll-behavior: smooth;
+    overflow-y: auto;
+}
+
+.slider::-webkit-scrollbar {
+    width: 6px;
+  }
+
+
+.slider::-webkit-scrollbar-thumb {
+    background: #E5E7F2;
+    border-radius: 10px;
+}
+
+.slider::-webkit-scrollbar-track {
+    margin-top: 8px;
+}
+
+/*calendar*/
+
+.toBeDone{
+    background: #2D3779;
+    padding: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+  
+  .taskDone{
+    background-color: #29CC39;
+  }
+  
+  .upcoming{
+    background-color: #C6C9CD;
+  }
+  
+  .calend table{
+    margin-top: 0px;
+  }
+  
+  .calend .fc-theme-standard th {
+    border: 0px;
+    padding-bottom: 5px;
+  }
+  
+  
+  .calend  .fc-theme-standard .fc-scrollgrid {
+      border: 0px;
+  }
+  
+  .calend .fc-dayGridMonth-view .fc .fc-scroller {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow: hidden  !important ;
+  }
+  
+  .calend .fc-col-header{
+    width: 100%  !important;
+  }
+  
+  .calend .fc-scrollgrid-sync-inner a{
+    text-decoration: none;
+    color: #7E818C;
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 11.5px;
+    text-transform: uppercase;
+  }
+  
+  .calend  .fc-col-header .fc-day-sun a, .calend  .fc-col-header .fc-day-sat a{
+    color: #ED3779;
+  }
+  
+  .calend .fc-theme-standard td{
+    height: 36.42px !important;
+    border: 0.95px solid #E9EBEF;
+  }
+
+
+  .fc table{
+    font-size: 12px !important;
+    border-spacing: 1px !important;
+  }
+  .fc-theme-standard td{
+    height: 60px !important;
+  }
+
+  .fc-direction-ltr .fc-daygrid-event.fc-event-start, .fc-direction-rtl .fc-daygrid-event.fc-event-end{
+    margin-right: 0px !important;
+  }
+  
+  .calend .fc .fc-daygrid-body {
+    width: 100%  !important;
+  }
+  
+  /* .calend .fc-scrollgrid-sync-table{
+    width: 100% !important;
+  } */
+  
+  
+  .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{
+    min-height: 0 !important;
+  }
+  
+  .calend .fc-daygrid-event{
+    border-radius: 50% !important;
+    height: 8px;
+    width: 8px;
+  }
+  
+  .fc-direction-ltr .fc-toolbar > * > :not(:first-child){
+    margin: 0px !important;
+  }
+  
+  .calend  .fc .fc-button-group .fc-button-group{
+  margin-right: auto !important;
+  }
+  
+  .calend  .fc .fc-button-group .fc-button{
+    padding: 2px 4px !important;
+    border-radius:  0.25rem !important;
+    font-size: 12px;
+    font-weight: 600;
+    border: 0px !important;
+  }
+
+  .calend  .fc .fc-button-group div{
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .fc-cell-shaded{
+    display: none;
+  }
+  
+  .calend  .fc .fc-timegrid-axis-cushion {
+    max-width: 60px;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  
+  
+  .fc-dayGridMonth-view .fc-event-time{
+    display: none;
+  }
+  
+  .calend .fc-event-title{
+    color: transparent;
+    cursor: pointer;
+  }
+  .calend .fc .fc-daygrid-day-top {
+    display: block;
+    padding: 7px 22px 0px 14px;
+  }
+  
+  .calend .fc-icon{
+    margin-right: 4px !important;
+  }
+  
+  .calend .fc-daygrid-day-top .fc-daygrid-day-number{
+    color: #262729;
+    text-align: center;
+    padding: 0px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  
+  .calend .fc .fc-scroller-harness-liquid {
+    height: 300px !important;
+  }
+  
+  .calend .fc-timeGridWeek-view .fc-scroller-harness-liquid ,.calend .fc-timeGridDay-view  .fc-scroller-harness-liquid{
+    height: 250px !important;
+  }
+  
+
+.fc-timeGridWeek-view .fc-scroller-harness  .fc-scroller{
+  overflow-y: scroll !important;
+}
+
+.fc-dayGridMonth-view .fc-scroller-harness  .fc-scroller{
+  overflow-y: hidden !important;
+}
+
+  .calend .fc-timeGridWeek-view .fc-scrollgrid-section-body .fc-scroller{
+    padding: 0px !important;
+  
+  }
+  .calend .fc-timeGridWeek-view .fc-timegrid-slots table, .fc-timeGridWeek-view .fc-timegrid-body{
+    margin-right: 0px !important;
+    width: 100% !important;
+  }
+  .calend .fc-scrollgrid-section-header .fc-scroller::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .calend .fc-timeGridWeek-view .fc-scrollgrid-section-body .fc-scroller::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .calend .fc-timeGridWeek-view .fc-scroller::-webkit-scrollbar-thumb {
+    background: #E5E7F2;
+    border-radius: 10px;
+  }
+  .calend .fc-timeGridWeek-view .fc-scroller::-webkit-scrollbar-corner{
+    width: 6px;
+  }
+  
+  .scrollerDiv{
+    overflow: hidden !important;
+  }
+  
+  .calend  .fc-timeGridDay-view .fc-scroller::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .calend  .fc-timeGridDay-view .fc-scroller::-webkit-scrollbar-thumb {
+    background: #E5E7F2;
+    border-radius: 10px;
+  }
+  .calend  .fc-timeGridDay-view .fc-scroller::-webkit-scrollbar-corner{
+    width: 6px;
+  }
+  
+  .calend .fc-timeGridDay-view  .fc-timegrid-body{
+    margin-right: 0px !important;
+    width: 100% !important;
+  }
+  
+  .calend .fc-timeGridDay-view  .fc-timegrid-body table{
+    margin-right: 0px !important;
+    width: 100% !important;
+  } 
+  .calend{
+    height: 420px !important;
+  }
+  
+  .calend .fc .fc-toolbar {
+    margin: 1.5em;
+  }
+  .calend .fc-toolbar-chunk h2{
+    padding-top: 1px;
+    font-size: 12px !important;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  
+  .calend .fc .fc-toolbar.fc-header-toolbar {
+    margin: 20px 10px;
+  }
+  
+  .calend .fc .fc-toolbar {
+    justify-content: start !important;
+  }
+  
+  .calend .fc-toolbar-chunk .fc-today-button{
+    display: none;
+  }
+
+  .fc .fc-button-primary:not(:disabled):active, .fc .fc-button-primary:not(:disabled).fc-button-active{
+    background-color: #fff !important;
+    color: #448DC9 !important;
+    font-size: 12px !important;
+    text-decoration: underline;
+    font-weight: 600;
+    margin: 0px !important;
+    border: 0px;
+    text-underline-offset: 2px;
+    outline: none;
+  }
+
+  
+  .custmText{
+    font-size: 15px;
+    font-weight: 500;
+    color: #2D3779;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .fc .fc-button-primary:not(:disabled):active, .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
+    border: 0px;
+    outline: none;
+  }
+  
+  .calend  .fc .fc-button-primary{
+    background-color: transparent;
+    color: var(--primaryColor);
+    border: 0px;
+    font-weight: 600;
+    font-size: 11.5016px;
+    line-height: 14px;
+  }
+  
+  .calend  .fc .fc-button-primary:hover{
+    background-color: transparent;
+    color: #717782;
+    border: 0px
+  }
+  
+  .calend  .fc .fc-button-primary::after{
+    background-color: transparent;
+    color: #717782;
+    border: 0px
+  }
+  
+  .fc .fc-button:disabled {
+    opacity: 0;
+  }
+  
+  
+  .filterContainer {
+    border: 1px solid #e9f0fc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+  
+  .singleData .dropdown-toggle{
+    background: #F3F6F9;
+    padding: 3px 5px;
+    color: #464E5F;
+    font-size: 18px;
+    border: 0px;
+    font-weight: 600;
+  }
+  
+  .btnCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .ligBtn:hover {
+    color: #7e839f;
+  }
+  .ligBtn, .ligBtn:hover {
+    background-color: #f8fafb;
+  }
+  .NotiContainer{
+    padding: 12px;
+  }
+  .clrBtn {
+    background-color: #a0a5c0;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 4px 6px;
+  }
+  
+  .campModal input[type=text] {
+    background-color: #fff;
+  }
+  input[type=text] {
+    padding: 0.375rem 0.75rem;
+    width: 100%;
+  }
+  .form-control, .form-select, input[type=text] {
+    background-color: #f8fafb;
+    border: 1px solid #e7ecff;
+    border-radius: 2px;
+    color: #6d728e;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .form-label {
+    color: #7e839f;
+    font-weight: 500;
+  }
+  
+  .fc-prev-button, .fc-next-button{
+    margin-right: 0px !important;
+    padding: 0px !important;
+  }
+  
+  
+  
+  
+  
+  /*Modal*/
+  
+  .addNewModal {
+    padding: 0 36px !important;
+  }
+  
+  .addNewModalFormContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+  }
+  .addNewModalContainer .modal-dialog {
+    max-width: none;
+  }
+  .addNewModalFormLeft {
+    width: 50%;
+  }
+  .addNewModalFormRight {
+    width: 50%;
+  }
+  .addNewModalHeading {
+    font-size: 22px;
+  font-weight: 600;
+  margin-top: 6px;
+  margin-bottom: 28px;
+  color: #2D3779;
+  }
+  
+  .addNewModalFromValue {
+    font-size: 14px;
+    font-weight: 600;
+    color: #7E839F;
+  }
+  
+  .addNewModalTextField {
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important ;
+    color: #9F9FB0 !important;
+    background-color: #FFFFFF !important;
+  }
+  
+  .addNewModalBtn {
+    width: 100%;
+    padding: 16px 0 !important;
+    font-size: 16px !important;
+    margin-bottom: 36px;
+  }
+  
+  .addNewModalDiseaseWrapper .form-control{
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #9F9FB0 !important;
+    background: #FFFFFF !important;
+  }
+  .addNewModalLocationContainer .form-control{
+    padding: 14px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #9F9FB0 !important;
+    background: #FFFFFF !important;
+  }
+  .editModalBody .form-control{
+    padding: 14px 20px !important;
+    background-color: #FFFFFF;
+  }
+  .actdionModal{
+    padding: 0 36px !important;
+  }
+  .scheduleModal {
+    padding: 0 32px !important;
+  }
+  
+  
+  .optionsModal .modal-content {
+    width: 100%;
+  }
+  .actionCloseImage {
+  width: 100%;
+    display: flex;
+    margin-top: 20px;
+    margin-left: 16px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .actionCloseImage:hover{
+  cursor: pointer;
+  }
+  .actdionModal h2 {
+    font-size: 20px;
+    text-align: center;
+    color: #2D3779;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .emailModalSubject {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7E839F;
+  }
+  .emailModalTextField {
+  padding: 14px 20px !important;
+  }
+  .emailModalTextArea{
+  padding: 12px 20px;
+  }
+  .actionModalHeading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 6px;
+  color: #2D3779;
+  }
+  
+  .schedultBtn {
+    font-size: 14px!important;
+    padding: 14px 0!important;
+    width: 100%;
+    margin-right: 0!important;
+    margin-bottom: 32px;
+  }
+  
+  .scheduleModalTextField {
+    padding: 12px!important;
+    color: #9f9fb0!important;
+    background: #fff!important;
+  }
+  
+  .scheduleModalInfluenersGroup .form-control {
+    background: #fff!important;
+    padding: 12px;
+  }
+  
+  .dateTime {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1em;
+  }
+  
+  .dateCont {
+    justify-content: center;
+    width: 25%;
+  }
+  
+  .dateCont, .timeLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .timeLabel {
+    flex-grow: 1;
+    width: 45%;
+    margin-left: 10px;
+  }
+  
+  .allDayCont {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  
+  .emailModalSubject {
+    font-size: 14px;
+    font-weight: 600;
+    color: #7e839f;
+  }
+  
+  .timeContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .timeLabel .time_picker_container {
+    font-size: 12px;
+    font-weight: 600;
+    width: 115px;
+    border: 1px solid #edf1ff;
+  }
+  
+  .dateCont .emailModalTextField {
+    padding: 8px!important;
+    width: 100%;
+    height: 46px;
+  }
+  
+  .timeLabel .preview_container {
+    padding-left: 25px;
+    left: 40%;
+  }
+  
+  .timeLabel .preview_container svg {
+    width: 20px!important;
+  }
+  
+  .timeLabel {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 45%;
+    margin-left: 10px;
+  }
+  .dateCont {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 25%;
+  }
+  .dateCont .emailModalTextField{
+    padding: 8px !important;
+    width: 100%;
+    height: 46px;
+  }
+  
+  
+  .timeLabel .modal_container {
+    width: 300px;
+  }
+  
+  
+  .timeLabel .react_times_button {
+    height: 44px;
+    box-shadow: none;
+  } 
+  
+  .checkboxContainer {
+    margin-top: 20px;
+  }
+  
+  .actionCloseImage {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    margin-left: 16px;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .scheduleModalHeading {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 2px;
+    color: #2d3779;
+  }
+  
+  .fc-daygrid-day-bg{
+    display: none;
+  }
+
+/*Noti Modal*/
+
+.modalNoti .textH2{
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 27px;
+  color: var(--primaryColor);
+  margin-bottom: 20px;
+}
+
+
+.modalNoti{
+  padding: 0px 32px 32px 32px !important;
+}
+
+.modalNoti .label{
+  font-weight: 600;
+  font-size: 14px;
+  color: #7E839F;
+  margin-bottom: 11px;
+}
+
+.modalNoti .form-control{
+  padding: 12px 0px 12px 12px;
+  margin-bottom: 20px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid #E7ECFF;
+  border-radius: 2px;
+}
+
+.modalNoti .form-control::placeholder{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #9F9FB0
+}
+
+.form-switch .form-check-input{
+  background-color: #DAE1F2;
+  border: 0px;
+  width: 37.84px !important;
+  height: 23px !important;
+}
+
+.form-switch label{
+  padding-top: 6px;
+  padding-left: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #7E839F;
+}
+
