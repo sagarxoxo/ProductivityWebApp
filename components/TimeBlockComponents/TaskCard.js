@@ -22,7 +22,7 @@ export default function TaskCard(props) {
       <Form>
         <Form.Control
             as="textarea"
-            style={{ height: '120px' }}
+            style={{ height: '140px' }}
             name="weekTask"
             value={
               props.title === "Week Project Task" ? props.weekTask : props.title === "Week Learning Task" ? props.weekTask1 : props.weekTask2
