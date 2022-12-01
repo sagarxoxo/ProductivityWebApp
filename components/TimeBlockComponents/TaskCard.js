@@ -7,7 +7,7 @@ export default function TaskCard(props) {
   const saveTime = () => {
     props.title === "Week Project Task" && localStorage.setItem(props.title, props.weekTask);
     props.title === "Week Learning Task" && localStorage.setItem(props.title, props.weekTask1);
-    props.title === "Week Blogging/YT Task" && localStorage.setItem(props.title, props.weekTask1);
+    props.title === "Week Blog/YT Task" && localStorage.setItem(props.title, props.weekTask2);
   }
 
   return (

@@ -28,7 +28,7 @@ export default function TimeBlock() {
         <Col lg={6}>
             <TaskCard title={"Week Project Task"} weekTask={weekTask} setWeekTask={setWeekTask} />
             <TaskCard title={"Week Learning Task"} weekTask1={weekTask1} setWeekTask1={setWeekTask1}/>
-            <TaskCard title={"Week Blogging/YT Task"} weekTask2={weekTask2} setWeekTask2={setWeekTask2}/>
+            <TaskCard title={"Week Blog/YT Task"} weekTask2={weekTask2} setWeekTask2={setWeekTask2}/>
         </Col>
     </Row>
     </Container>
