@@ -14,7 +14,7 @@ export default function TimeBlock() {
   useEffect(() => {
     localStorage.getItem("Week Project Task") && setWeekTask(localStorage.getItem("Week Project Task"))
     localStorage.getItem("Week Learning Task") && setWeekTask1(localStorage.getItem("Week Learning Task"))
-    localStorage.getItem("Week Blogging/YT Task") && setWeekTask2(localStorage.getItem("Week Learning Task"))
+    localStorage.getItem("Week Blog/YT Task") && setWeekTask2(localStorage.getItem("Week Blog/YT Task"))
   },[])
 
 

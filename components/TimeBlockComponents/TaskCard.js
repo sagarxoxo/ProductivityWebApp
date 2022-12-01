@@ -25,7 +25,8 @@ export default function TaskCard(props) {
             style={{ height: '140px' }}
             name="weekTask"
             value={
-              props.title === "Week Project Task" ? props.weekTask : props.title === "Week Learning Task" ? props.weekTask1 : props.weekTask2
+              props.title === "Week Project Task" ? props.weekTask : 
+              props.title === "Week Learning Task" ? props.weekTask1 : props.weekTask2
             }
             onChange={
               (e) => props.title === "Week Project Task" ? props.setWeekTask(e.target.value) : props.title === "Week Learning Task" ? 
