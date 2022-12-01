@@ -9,10 +9,12 @@ export default function TimeBlock() {
 
   const [weekTask, setWeekTask] = useState();
   const [weekTask1, setWeekTask1] = useState();
+  const [weekTask2, setWeekTask2] = useState();
 
   useEffect(() => {
     localStorage.getItem("Week Project Task") && setWeekTask(localStorage.getItem("Week Project Task"))
     localStorage.getItem("Week Learning Task") && setWeekTask1(localStorage.getItem("Week Learning Task"))
+    localStorage.getItem("Week Blogging/YT Task") && setWeekTask2(localStorage.getItem("Week Learning Task"))
   },[])
 
 
@@ -26,6 +28,7 @@ export default function TimeBlock() {
         <Col lg={6}>
             <TaskCard title={"Week Project Task"} weekTask={weekTask} setWeekTask={setWeekTask} />
             <TaskCard title={"Week Learning Task"} weekTask1={weekTask1} setWeekTask1={setWeekTask1}/>
+            <TaskCard title={"Week Blogging/YT Task"} weekTask2={weekTask2} setWeekTask2={setWeekTask2}/>
         </Col>
     </Row>
     </Container>

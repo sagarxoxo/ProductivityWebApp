@@ -7,10 +7,8 @@ export default function TaskCard(props) {
   const saveTime = () => {
     props.title === "Week Project Task" && localStorage.setItem(props.title, props.weekTask);
     props.title === "Week Learning Task" && localStorage.setItem(props.title, props.weekTask1);
+    props.title === "Week Blogging/YT Task" && localStorage.setItem(props.title, props.weekTask1);
   }
-
-
-
 
   return (
     <div className={styles.card}>
@@ -26,8 +24,13 @@ export default function TaskCard(props) {
             as="textarea"
             style={{ height: '120px' }}
             name="weekTask"
-            value={props.title === "Week Project Task" ? props.weekTask : props.weekTask1}
-            onChange={(e) => props.title === "Week Project Task" ? props.setWeekTask(e.target.value) : props.setWeekTask1(e.target.value)}
+            value={
+              props.title === "Week Project Task" ? props.weekTask : props.title === "Week Learning Task" ? props.weekTask1 : props.weekTask2
+            }
+            onChange={
+              (e) => props.title === "Week Project Task" ? props.setWeekTask(e.target.value) : props.title === "Week Learning Task" ? 
+              props.setWeekTask1(e.target.value) : props.setWeekTask2(e.target.value)
+            }
           />
       </Form>
       </div>
