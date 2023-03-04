@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+};
 
 /** @type {import('next').NextConfig} */
 const withTM = require("next-transpile-modules")([
@@ -16,5 +16,5 @@ const withTM = require("next-transpile-modules")([
 ]);
 
 module.exports = withTM({
-  nextConfig
+  nextConfig,
 });
