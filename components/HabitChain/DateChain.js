@@ -3,6 +3,8 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import { Form } from "react-bootstrap";
+import { BsPencilSquare } from "react-icons/bs";
 
 export default function DateChain() {
   const [event, setEvents] = useState([
@@ -10,33 +12,48 @@ export default function DateChain() {
     { start: "2022-03-17", end: "2022-03-18", color: "red" },
   ]);
 
-  function handleSelectedDates(info) {
-    let check;
-    let i;
-    // for( i=0; i <= event.length; i++){
-    //     if(event[i].start === info.startStr){
-    //         check = true
-    //     }
-    //     else{
-    //         check = false
-    //     }
-    // }
-    // let exists = Object.values(event[0]).includes("test1");
+  const [editSwitch, setEditSwitch] = useState(true);
+  const [habitTitle, setHabitTitle] = useState("habit Title");
 
+  function handleSelectedDates(info) {
     const newEvent = {
       start: info.startStr,
       end: info.endStr,
       color: "red",
     };
 
-    setEvents((prevEvent) => [...prevEvent, newEvent]);
-  }
+    const filterEvent = event.filter((data) => data.start === info.startStr);
 
-  console.log(event);
+    if (filterEvent.length !== 0) {
+      setEvents((prevData) =>
+        prevData.filter((data) => data.start !== info.startStr)
+      );
+    } else {
+      setEvents((prevEvent) => [...prevEvent, newEvent]);
+    }
+  }
 
   return (
     <div className="calendarContainer">
       <div className="NotiSec">
+        <div className="d-flex flex-row justify-content-between pt-4 title-sec-calend">
+          {!editSwitch && (
+            <Form.Group className="w-100 pe-4 height-50">
+              <Form.Check
+                type="text"
+                name="habitTitle"
+                className="form-sty"
+                value={habitTitle}
+                onChange={(e) => setHabitTitle(e.target.value)}
+              />
+            </Form.Group>
+          )}
+          {editSwitch && <h2>{habitTitle}</h2>}
+          {editSwitch && <BsPencilSquare />}
+          {!editSwitch && (
+            <button onClick={() => setEditSwitch(true)}>Save</button>
+          )}
+        </div>
         <div className="calend">
           <FullCalendar
             plugins={[dayGridPlugin, interactionPlugin]}

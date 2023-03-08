@@ -61,3 +61,23 @@ h6{
     background: black;
   } */
 }
+
+.singn-btn-section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.singn-btn-section button{
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  border: 0px;
+  padding: 16px 20px;
+}
+
+.singn-btn-section svg{
+  margin-right: 10px;
+}
