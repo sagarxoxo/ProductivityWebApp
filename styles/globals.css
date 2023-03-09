@@ -52,6 +52,10 @@ h6{
   font-size: 1.25rem;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 @media (prefers-color-scheme: dark) {
   /* html {
     color-scheme: dark;
@@ -80,4 +84,22 @@ h6{
 
 .singn-btn-section svg{
   margin-right: 10px;
+}
+
+.home-card{
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.home-card h2{
+  text-decoration: none;
+  font-size: 20px;
+  color: #00000090;
+}
+
+.home-card:hover{
+  box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Col, Container, Row } from "react-bootstrap";
 
 export default function Home() {
@@ -8,17 +9,19 @@ export default function Home() {
   return (
     <div>
       <Container>
+        <h2 className="text-center mt-5 mb-5">All Productivity Tools</h2>
         <Row>
           {navData.map((data) => {
-            <Col lg={3}>
-              <div>
-                <h2>
-                  <a>{data.title}</a>
-                </h2>
-              </div>
-            </Col>;
+            return (
+              <Col lg={2}>
+                <Link href={data.url}>
+                  <div className="home-card">
+                    <h2>{data.title}</h2>
+                  </div>
+                </Link>
+              </Col>
+            );
           })}
-          <Col lg={3}></Col>
         </Row>
       </Container>
     </div>

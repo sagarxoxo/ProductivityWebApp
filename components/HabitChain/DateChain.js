@@ -4,34 +4,60 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import { Form } from "react-bootstrap";
-import { BsPencilSquare } from "react-icons/bs";
+import { BsFillTrashFill, BsPencilSquare } from "react-icons/bs";
+import { deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
 
-export default function DateChain() {
-  const [event, setEvents] = useState([
-    { start: "2022-03-16", end: "2022-03-17", color: "red" },
-    { start: "2022-03-17", end: "2022-03-18", color: "red" },
-  ]);
-
+export default function DateChain({ eveData }) {
   const [editSwitch, setEditSwitch] = useState(true);
-  const [habitTitle, setHabitTitle] = useState("habit Title");
+  const [habitTitle, setHabitTitle] = useState("Habit Chain");
 
   function handleSelectedDates(info) {
+    const docUpdateEvent = doc(db, "date chain", eveData.id);
     const newEvent = {
       start: info.startStr,
       end: info.endStr,
       color: "red",
     };
 
-    const filterEvent = event.filter((data) => data.start === info.startStr);
+    const filterEvent = eveData.event.filter(
+      (data) => data.start === info.startStr
+    );
 
     if (filterEvent.length !== 0) {
-      setEvents((prevData) =>
-        prevData.filter((data) => data.start !== info.startStr)
+      const updatedData = eveData.event.filter(
+        (data) => data.start !== info.startStr
       );
+      updateDoc(docUpdateEvent, {
+        event: updatedData,
+      });
+      // setEvents((prevData) =>
+      //   prevData.filter((data) => data.start !== info.startStr)
+      // );
     } else {
-      setEvents((prevEvent) => [...prevEvent, newEvent]);
+      updateDoc(docUpdateEvent, {
+        event: [...eveData.event, newEvent],
+      })
+        .then((res) => console.log("update", res))
+        .catch((err) => console.log(err));
+      // setEvents((prevEvent) => [...prevEvent, newEvent]);
     }
   }
+
+  const handleSave = (id) => {
+    const docUpdateEvent = doc(db, "date chain", id);
+    setEditSwitch(true);
+
+    updateDoc(docUpdateEvent, {
+      title: habitTitle,
+    });
+  };
+
+  const handleDelete = (id) => {
+    const docDeleteEvent = doc(db, "date chain", id);
+
+    deleteDoc(docDeleteEvent);
+  };
 
   return (
     <div className="calendarContainer">
@@ -48,10 +74,15 @@ export default function DateChain() {
               />
             </Form.Group>
           )}
-          {editSwitch && <h2>{habitTitle}</h2>}
-          {editSwitch && <BsPencilSquare />}
+          {editSwitch && <h2>{eveData.title}</h2>}
+          {editSwitch && (
+            <div>
+              <BsPencilSquare onClick={() => setEditSwitch(false)} />
+              <BsFillTrashFill onClick={() => handleDelete(eveData.id)} />
+            </div>
+          )}
           {!editSwitch && (
-            <button onClick={() => setEditSwitch(true)}>Save</button>
+            <button onClick={() => handleSave(eveData.id)}>Save</button>
           )}
         </div>
         <div className="calend">
@@ -59,7 +90,7 @@ export default function DateChain() {
             plugins={[dayGridPlugin, interactionPlugin]}
             eventLimit={true}
             defaultView="dayGridMonth"
-            events={event}
+            events={eveData?.event}
             weekends={true}
             selectable={true}
             select={handleSelectedDates}

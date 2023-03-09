@@ -1,44 +1,54 @@
-import React, { useEffect, useState } from 'react'
-import { Button, Col, Container, Form, Row, Table } from 'react-bootstrap'
-import styles from "../../styles/Timeblock.module.css"
-import TimePicker from 'react-time-picker/dist/entry.nostyle';
-import TaskCard from '../../components/TimeBlockComponents/TaskCard';
-import DailyTaskTimeBlock from '../../components/TimeBlockComponents/DailyTaskTimeBlock';
+import React, { useEffect, useState } from "react";
+import { Button, Col, Container, Form, Row, Table } from "react-bootstrap";
+import styles from "../../styles/Timeblock.module.css";
+import TimePicker from "react-time-picker/dist/entry.nostyle";
+import TaskCard from "../../components/TimeBlockComponents/TaskCard";
+import DailyTaskTimeBlock from "../../components/TimeBlockComponents/DailyTaskTimeBlock";
 
 export default function TimeBlock() {
-
   const [weekTask, setWeekTask] = useState();
   const [weekTask1, setWeekTask1] = useState();
   const [weekTask2, setWeekTask2] = useState();
 
   useEffect(() => {
-    localStorage.getItem("Week Project Task") && setWeekTask(localStorage.getItem("Week Project Task"))
-    localStorage.getItem("Week Learning Task") && setWeekTask1(localStorage.getItem("Week Learning Task"))
-    localStorage.getItem("Week Blog/YT Task") && setWeekTask2(localStorage.getItem("Week Blog/YT Task"))
-  },[])
-
+    localStorage.getItem("Week Project Task") &&
+      setWeekTask(localStorage.getItem("Week Project Task"));
+    localStorage.getItem("Week Learning Task") &&
+      setWeekTask1(localStorage.getItem("Week Learning Task"));
+    localStorage.getItem("Week Blog/YT Task") &&
+      setWeekTask2(localStorage.getItem("Week Blog/YT Task"));
+  }, []);
 
   return (
     <div className={styles.timeBlock}>
-    <Container>
-    <Row>
-        <Col lg={6}>
+      <Container>
+        <Row>
+          <Col lg={6}>
             <DailyTaskTimeBlock />
-        </Col>
-        <Col lg={6}>
-            <TaskCard title={"Week Project Task"} weekTask={weekTask} setWeekTask={setWeekTask} />
-            <TaskCard title={"Week Learning Task"} weekTask1={weekTask1} setWeekTask1={setWeekTask1}/>
-            <TaskCard title={"Week Blog/YT Task"} weekTask2={weekTask2} setWeekTask2={setWeekTask2}/>
-        </Col>
-    </Row>
-    </Container>
+          </Col>
+          <Col lg={6}>
+            <TaskCard
+              title={"Week Project Task"}
+              weekTask={weekTask}
+              setWeekTask={setWeekTask}
+            />
+            <TaskCard
+              title={"Week Learning Task"}
+              weekTask1={weekTask1}
+              setWeekTask1={setWeekTask1}
+            />
+            <TaskCard
+              title={"Week Blog/YT Task"}
+              weekTask2={weekTask2}
+              setWeekTask2={setWeekTask2}
+            />
+          </Col>
+        </Row>
+      </Container>
     </div>
-  )
+  );
 }
 
-
-
-    
 //     const dailyTask = [
 //     {
 //         id: 0,
@@ -116,7 +126,6 @@ export default function TimeBlock() {
 //         taskCompleted: false
 //     },
 //     ]
-    
 
 //     const [tdData, setTdData] = useState(dailyTask)
 
@@ -124,14 +133,13 @@ export default function TimeBlock() {
 //      const num = Number(value?.slice(0,2)) + id
 
 //      if(num == 12 || num == 0){
-//        return 12 
+//        return 12
 //      }
 //      else if(num >= 12){
-//         return num - 12 
+//         return num - 12
 //      }
 //      else{
 //         return num
 //      }
-    
-//     }
 
+//     }
