@@ -11,9 +11,9 @@ export default function Home() {
       <Container>
         <h2 className="text-center mt-5 mb-5">All Productivity Tools</h2>
         <Row>
-          {navData.map((data) => {
+          {navData.map((data, index) => {
             return (
-              <Col lg={2}>
+              <Col lg={2} key={index}>
                 <Link href={data.url}>
                   <div className="home-card">
                     <h2>{data.title}</h2>
