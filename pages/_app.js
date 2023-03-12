@@ -19,8 +19,6 @@ function MyApp({ Component, pageProps }) {
     setUser(localStorage.getItem("users"));
   }, []);
 
-  console.log("user", user);
-
   return (
     <div>
       <UserState>

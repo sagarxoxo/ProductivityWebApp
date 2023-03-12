@@ -4,19 +4,48 @@ import styles from "../../styles/Timeblock.module.css";
 import TimePicker from "react-time-picker/dist/entry.nostyle";
 import TaskCard from "../../components/TimeBlockComponents/TaskCard";
 import DailyTaskTimeBlock from "../../components/TimeBlockComponents/DailyTaskTimeBlock";
+import {
+  collection,
+  doc,
+  onSnapshot,
+  query,
+  setDoc,
+  updateDoc,
+  where,
+} from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
 
 export default function TimeBlock() {
-  const [weekTask, setWeekTask] = useState();
-  const [weekTask1, setWeekTask1] = useState();
-  const [weekTask2, setWeekTask2] = useState();
+  const [task, setTask] = useState([]);
+
+  const collectionTimeTask = collection(db, "time task");
+
+  const addTaskNew = async () => {
+    const userID = localStorage.getItem("users");
+
+    setTask((prevData) => [...prevData, { title: "Title", value: "" }]);
+    await updateDoc(doc(db, "time task", userID), {
+      task,
+    });
+  };
 
   useEffect(() => {
-    localStorage.getItem("Week Project Task") &&
-      setWeekTask(localStorage.getItem("Week Project Task"));
-    localStorage.getItem("Week Learning Task") &&
-      setWeekTask1(localStorage.getItem("Week Learning Task"));
-    localStorage.getItem("Week Blog/YT Task") &&
-      setWeekTask2(localStorage.getItem("Week Blog/YT Task"));
+    const userID = localStorage.getItem("users");
+    const q = query(collectionTimeTask, where("uid", "==", userID));
+
+    const fetchData = onSnapshot(q, (snapshot) => {
+      let listData = [];
+      snapshot.docs.forEach((item) => {
+        listData.push({ ...item.data(), id: item.id });
+      });
+      setTask(
+        listData[0].task ? listData[0].task : [{ title: "Title", value: "" }]
+      );
+    });
+
+    return () => {
+      fetchData();
+    };
   }, []);
 
   return (
@@ -24,24 +53,24 @@ export default function TimeBlock() {
       <Container>
         <Row>
           <Col lg={6}>
-            <DailyTaskTimeBlock />
+            <DailyTaskTimeBlock task={task} />
           </Col>
           <Col lg={6}>
-            <TaskCard
-              title={"Week Project Task"}
-              weekTask={weekTask}
-              setWeekTask={setWeekTask}
-            />
-            <TaskCard
-              title={"Week Learning Task"}
-              weekTask1={weekTask1}
-              setWeekTask1={setWeekTask1}
-            />
-            <TaskCard
-              title={"Week Blog/YT Task"}
-              weekTask2={weekTask2}
-              setWeekTask2={setWeekTask2}
-            />
+            <button className={styles.addNewTsk} onClick={addTaskNew}>
+              <h4>Add New Task</h4>
+            </button>
+            {task?.map((data, index) => {
+              return (
+                <TaskCard
+                  key={index}
+                  title={data.title}
+                  value={data.value}
+                  setTask={setTask}
+                  task={task}
+                  index={index}
+                />
+              );
+            })}
           </Col>
         </Row>
       </Container>

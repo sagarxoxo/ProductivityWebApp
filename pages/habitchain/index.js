@@ -19,16 +19,14 @@ export default function HabitChain() {
 
   const collectionDateChain = collection(db, "date chain");
 
-  const addNewDateChain = () => {
+  const addNewDateChain = async () => {
     const userID = localStorage.getItem("users");
 
-    addDoc(collectionDateChain, {
+    await addDoc(collectionDateChain, {
       title: "Habit Chain",
       event: eve,
       uid: userID,
-    })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err.message));
+    });
   };
 
   useEffect(() => {
@@ -60,8 +58,6 @@ export default function HabitChain() {
     // fetchData();
   }, []);
 
-  console.log(event);
-
   return (
     <div className={styles.habitchainConatiner}>
       <Container>
@@ -72,9 +68,9 @@ export default function HabitChain() {
               <p>Create multiple habit chain</p>
             </div>
           </Col>
-          {event?.map((eveData) => {
+          {event?.map((eveData, index) => {
             return (
-              <Col lg={4}>
+              <Col lg={4} key={index}>
                 <DateChain eveData={eveData} />
               </Col>
             );
